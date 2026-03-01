@@ -1,7 +1,17 @@
 {
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "mongoose": "^7.4.2"
+  "name": "cs2-gaming-platform",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev:client": "npm run dev --workspace=client",
+    "dev:server": "spacetime dev --project-path server",
+    "build:client": "npm run build --workspace=client",
+    "publish": "spacetime publish cs2-gaming --project-path server",
+    "lint": "npx biome check .",
+    "lint:fix": "npx biome check --write .",
+    "test": "npm run test --workspace=client"
   }
 }
